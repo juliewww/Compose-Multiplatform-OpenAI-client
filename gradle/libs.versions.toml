@@ -1,6 +1,6 @@
 [versions]
 aallam-openai = "3.8.2"
-agp = "8.2.2"
+agp = "8.5.2"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -18,23 +18,14 @@ kotlin = "2.0.0"
 kotlinx-coroutines = "1.8.1"
 material3 = "1.7.0-alpha01"
 koin = "3.5.1"
-ktor = "2.3.2"
-ktor-cio = "3.0.0-beta-2"
+ktor-bom = "2.3.12"
 
 [libraries]
 aallam-openai-bom = { group = "com.aallam.openai", name = "openai-client-bom", version.ref = "aallam-openai" }
 aallam-openai = { group = "com.aallam.openai", name = "openai-client" }
-ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp" }
-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-client-plugins = { module = "io.ktor:ktor-client-plugins", version.ref = "ktor" }
-ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
-ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
-ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor-cio" }
-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+ktor-bom = { group = "io.ktor", name = "ktor-bom", version.ref = "ktor-bom" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio"}
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }

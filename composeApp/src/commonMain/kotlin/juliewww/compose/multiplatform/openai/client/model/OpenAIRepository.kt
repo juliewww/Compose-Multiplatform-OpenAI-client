@@ -8,6 +8,7 @@ import com.aallam.openai.api.http.Timeout
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
 import com.aallam.openai.client.OpenAIConfig
+import io.ktor.client.engine.cio.CIO
 import kotlinx.coroutines.flow.Flow
 import kotlin.time.Duration.Companion.seconds
 
@@ -24,6 +25,7 @@ class ChatCompletionRepository : OpenAIRepository {
         val config = OpenAIConfig(
             token = openAIApiKey,
             timeout = Timeout(socket = 60.seconds),
+            engine = CIO.create(),
         )
         val openAI = OpenAI(config)
 

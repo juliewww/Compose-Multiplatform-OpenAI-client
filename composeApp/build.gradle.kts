@@ -32,12 +32,10 @@ kotlin {
     
     sourceSets {
         val desktopMain by getting
-        
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.ktor.client.android)
-            runtimeOnly(libs.ktor.client.cio)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -49,23 +47,19 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(project.dependencies.platform(libs.aallam.openai.bom))
-            implementation(libs.aallam.openai)
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
-            runtimeOnly(libs.ktor.client.okhttp)
+            implementation(project.dependencies.platform(libs.aallam.openai.bom))
+            implementation(libs.aallam.openai)
+            implementation(project.dependencies.platform(libs.ktor.bom))
+            implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.client.content.negotiation)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
-            runtimeOnly(libs.ktor.client.cio)
-        }
-        iosMain.dependencies {
-            dependencies {
-                implementation(libs.ktor.client.darwin)
-                runtimeOnly(libs.ktor.client.cio)
-            }
+            implementation(libs.ktor.client.content.negotiation)
         }
     }
 }
