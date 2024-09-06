@@ -29,10 +29,6 @@ class ChatViewModel(
         }
     }
 
-    /* Send the message to the OpenAI API and update the chat list with the response
-    Show error message when the API call fails */
-
-
     private suspend fun chatCompletionRequest(message: String) {
         val result = StringBuilder()
         try {
