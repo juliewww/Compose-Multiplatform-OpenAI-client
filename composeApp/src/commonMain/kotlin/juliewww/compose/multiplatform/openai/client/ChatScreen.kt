@@ -11,7 +11,9 @@ import juliewww.compose.multiplatform.openai.client.component.Conversation
 import juliewww.compose.multiplatform.openai.client.component.InputBar
 
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
+@OptIn(KoinExperimentalAPI::class)
 @Composable
 fun ChatScreen(
     modifier: Modifier = Modifier,
