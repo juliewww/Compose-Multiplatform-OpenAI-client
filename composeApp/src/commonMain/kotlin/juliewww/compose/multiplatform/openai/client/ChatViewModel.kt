@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
 
 class ChatViewModel(
     private val openAIRepository: OpenAIRepository,
@@ -70,6 +71,7 @@ data class ChatState(
     ),
 )
 
+@Serializable
 data class Chat(
     val message: String = "",
     val sender: Sender = Sender.AI,
