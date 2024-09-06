@@ -15,15 +15,17 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun ChatScreen(
     modifier: Modifier = Modifier,
-    viewModel: ChatViewModel = koinViewModel(),
+    chatViewModel: ChatViewModel = koinViewModel(),
+    settingsViewModel: SettingsViewModel = koinViewModel(),
 ) {
-    val uiState by viewModel.chatState.collectAsStateWithLifecycle()
+    val chatUiState by chatViewModel.chatState.collectAsStateWithLifecycle()
+    val settingsUiState by settingsViewModel.settingsUiState.collectAsStateWithLifecycle()
     Column(modifier = modifier) {
         ChatBar()
         HorizontalDivider()
-        Conversation(modifier = Modifier.weight(1f), chatList = uiState.chatList)
+        Conversation(modifier = Modifier.weight(1f), chatList = chatUiState.chatList)
         InputBar { message ->
-            viewModel.sendMessage(message)
+            chatViewModel.sendMessage(message)
         }
     }
 }
