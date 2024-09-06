@@ -21,7 +21,10 @@ fun ChatScreen(
     val chatUiState by chatViewModel.chatState.collectAsStateWithLifecycle()
     val settingsUiState by settingsViewModel.settingsUiState.collectAsStateWithLifecycle()
     Column(modifier = modifier) {
-        ChatBar()
+        ChatBar(
+            key = (settingsUiState as? SettingsUiState.Success)?.settings?.openAiKey ?: "",
+            updateKey = settingsViewModel::setOpenAiKey
+        )
         HorizontalDivider()
         Conversation(modifier = Modifier.weight(1f), chatList = chatUiState.chatList)
         InputBar { message ->

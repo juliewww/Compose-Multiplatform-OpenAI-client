@@ -52,7 +52,7 @@ fun ChatBar(
             })
     }
     if (showSettingsDialog) {
-        KeySettingDialog(key = text,
+        KeySettingDialog(key = key,
             onDismiss = { showSettingsDialog = false },
             updateKey = { updateKey(it) })
     }
