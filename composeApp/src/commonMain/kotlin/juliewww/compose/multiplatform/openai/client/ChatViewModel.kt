@@ -29,17 +29,25 @@ class ChatViewModel(
         }
     }
 
+    /* Send the message to the OpenAI API and update the chat list with the response
+    Show error message when the API call fails */
+
+
     private suspend fun chatCompletionRequest(message: String) {
         val result = StringBuilder()
-        openAIRepository.chatCompletion(
-            message = message,
-            history = integrateHistory()
-        ).onEach { print(it.choices.first().delta?.content.orEmpty()) }
-            .onCompletion { println() }
-            .collect {
-                result.append(it.choices.first().delta?.content.orEmpty())
-                updateLocalAnswer(result.toString())
-            }
+        try {
+            openAIRepository.chatCompletion(
+                message = message,
+                history = integrateHistory()
+            ).onEach { print(it.choices.first().delta?.content.orEmpty()) }
+                .onCompletion { println() }
+                .collect {
+                    result.append(it.choices.first().delta?.content.orEmpty())
+                    updateLocalAnswer(result.toString())
+                }
+        } catch (e: Exception) {
+            updateLocalAnswer(e.cause?.message ?: "An error occurred")
+        }
     }
 
     private fun updateLocalAnswer(answer: String) {
