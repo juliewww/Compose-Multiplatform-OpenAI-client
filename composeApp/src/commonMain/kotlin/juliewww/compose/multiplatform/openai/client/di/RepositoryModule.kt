@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 val openAIRepositoryModule = module {
     single<OpenAIRepository> {
-        ChatCompletionRepository()
+        ChatCompletionRepository(get())
     }
 }
 

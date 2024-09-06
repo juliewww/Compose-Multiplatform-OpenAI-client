@@ -9,21 +9,28 @@ import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
 import com.aallam.openai.client.OpenAIConfig
 import io.ktor.client.engine.cio.CIO
+import juliewww.compose.multiplatform.openai.client.datastore.PreferenceDataSource
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlin.time.Duration.Companion.seconds
 
 
 interface OpenAIRepository {
-    fun chatCompletion(message: String, history: String?): Flow<ChatCompletionChunk>
+    suspend fun chatCompletion(message: String, history: String?): Flow<ChatCompletionChunk>
 }
 
-class ChatCompletionRepository : OpenAIRepository {
-    override fun chatCompletion(
+class ChatCompletionRepository(
+    preferenceDataSource: PreferenceDataSource,
+) : OpenAIRepository {
+    private val userData: Flow<UserData> = preferenceDataSource.userData
+
+    override suspend fun chatCompletion(
         message: String,
         history: String?,
     ): Flow<ChatCompletionChunk> {
         val config = OpenAIConfig(
-            token = openAIApiKey,
+            token = userData.map { it.openAiKey }.first(),
             timeout = Timeout(socket = 60.seconds),
             engine = CIO.create(),
         )

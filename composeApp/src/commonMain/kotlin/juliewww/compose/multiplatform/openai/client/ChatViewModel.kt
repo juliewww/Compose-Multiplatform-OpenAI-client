@@ -30,7 +30,7 @@ class ChatViewModel(
     }
 
     private suspend fun chatCompletionRequest(message: String) {
-        val result: StringBuilder = StringBuilder()
+        val result = StringBuilder()
         openAIRepository.chatCompletion(
             message = message,
             history = integrateHistory()
