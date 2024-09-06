@@ -36,7 +36,8 @@ class ChatCompletionRepository(
         )
         val openAI = OpenAI(config)
 
-        val chatCompletionRequest = ChatCompletionRequest(model = ModelId("gpt-3.5-turbo"),
+        val chatCompletionRequest = ChatCompletionRequest(
+            model = ModelId("gpt-4o-mini"),
             messages = listOf(ChatMessage(
                 role = ChatRole.System,
                 content = "You are a helpful assistant!" + (history?.let { "\n Chat history: \n $it" }
