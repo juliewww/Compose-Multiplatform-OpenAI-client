@@ -19,6 +19,8 @@ kotlinx-coroutines = "1.8.1"
 material3 = "1.7.0-alpha01"
 koin = "3.5.1"
 ktor-bom = "2.3.12"
+kmp-settings = "1.1.1"
+kotlinxSerializationJson = "1.7.0"
 
 [libraries]
 aallam-openai-bom = { group = "com.aallam.openai", name = "openai-client-bom", version.ref = "aallam-openai" }
@@ -43,6 +45,12 @@ koin-core = { group = "io.insert-koin", name = "koin-core" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
 koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version = "1.2.0-Beta4" }
 koin-android = { group = "io.insert-koin", name = "koin-android" }
+kmp-settings = { group = "com.russhwolf", name = "multiplatform-settings-no-arg", version.ref = "kmp-settings" }
+kmp-settings-test = { group = "com.russhwolf", name = "multiplatform-settings-test", version.ref = "kmp-settings" }
+kmp-settings-serialization = { group = "com.russhwolf", name = "multiplatform-settings-serialization", version.ref = "kmp-settings" }
+kmp-settings-coroutines = { group = "com.russhwolf", name = "multiplatform-settings-coroutines", version.ref = "kmp-settings" }
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinxSerializationJson" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -50,3 +58,4 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
