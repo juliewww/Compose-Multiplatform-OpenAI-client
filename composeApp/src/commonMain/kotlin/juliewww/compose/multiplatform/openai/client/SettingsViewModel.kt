@@ -1,6 +1,7 @@
 package juliewww.compose.multiplatform.openai.client
 
 import UserDataRepository
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +12,7 @@ import kotlin.time.Duration.Companion.seconds
 
 class SettingsViewModel(
     private val userDataRepository: UserDataRepository,
-) {
+): ViewModel() {
     val settingsUiState: StateFlow<SettingsUiState> =
         userDataRepository.userData
             .map { userData ->
@@ -27,7 +28,7 @@ class SettingsViewModel(
                 initialValue = SettingsUiState.Loading,
             )
 
-    suspend fun setOpenAiKey(newKey: String) {
+    fun setOpenAiKey(newKey: String) {
         viewModelScope.launch {
             userDataRepository.setOpenAiKey(newKey)
         }
