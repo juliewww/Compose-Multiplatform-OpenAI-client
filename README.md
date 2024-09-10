@@ -19,3 +19,11 @@ We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public S
 If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+
+This is the preview of the desktop application:
+![Desktop Error Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/desktop-error-preview.png)
+![Desktop Setting Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/desktop-setting-preview.png)
+
+This is the preview of the android application:
+![Android Chat Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/android-chat-preview.png)
+![Android Setting Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/android-setting-preview.png)
