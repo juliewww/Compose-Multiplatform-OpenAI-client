@@ -21,9 +21,9 @@ If you face any issues, please report them on [GitHub](https://github.com/JetBra
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
 
 This is the preview of the desktop application:
-![Desktop Error Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/desktop-error-preview.png)
-![Desktop Setting Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/desktop-setting-preview.png)
+![Desktop Error Preview](/docs/images/graphs/desktop-error-preview.png)
+![Desktop Setting Preview](/docs/images/graphs/desktop-setting-preview.png)
 
 This is the preview of the android application:
-![Android Chat Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/android-chat-preview.png)
-![Android Setting Preview](/Users/julie.wang/StudioProjects/Compose-Multiplatform-OpenAI-client/docs/images/graphs/android-setting-preview.png)
+![Android Chat Preview](/docs/images/graphs/android-chat-preview.png)
+![Android Setting Preview](/docs/images/graphs/android-setting-preview.png)
