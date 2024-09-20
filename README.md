@@ -1,4 +1,4 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+# This is a AI Chatbot project using Kotlin Multiplatform targeting Android, iOS, Web, Desktop.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
@@ -20,10 +20,10 @@ If you face any issues, please report them on [GitHub](https://github.com/JetBra
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
 
-This is the preview of the desktop application:
+# This is the preview of the desktop application:
 ![Desktop Error Preview](/docs/images/graphs/desktop-error-preview.png)
 ![Desktop Setting Preview](/docs/images/graphs/desktop-setting-preview.png)
 
-This is the preview of the android application:
+# This is the preview of the android application:
 ![Android Chat Preview](/docs/images/graphs/android-chat-preview.png)
 ![Android Setting Preview](/docs/images/graphs/android-setting-preview.png)
